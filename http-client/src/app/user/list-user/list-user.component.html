@@ -1,0 +1,26 @@
+<div class="col-md-12">
+    <h2 style="margin: auto"> User List</h2>
+    <button class="btn btn-danger" style="width:100px" (click)="addUser()"> Add User</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>BirthDate</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.birthDate | date: 'MM/dd/yyyy'}}</td>
+                <td>{{user.role}}</td>
+                <td><button class="btn btn-success" (click)="deleteUser(user)"> Delete</button>
+                    <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
